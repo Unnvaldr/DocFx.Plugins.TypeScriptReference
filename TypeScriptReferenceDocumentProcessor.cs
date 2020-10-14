@@ -112,7 +112,7 @@ namespace DocFx.Plugins.TypeScriptReference
             {
                 UpdateModelContent(model);
             }
-            catch (DocumentException de)
+            catch (DocumentException)
             {
                 throw;
             }
