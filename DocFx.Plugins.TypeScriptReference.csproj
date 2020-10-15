@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplyOverwriteDocumentForUref.cs" />
     <Compile Include="BuildOutputs\ApiBuildOutput.cs" />
     <Compile Include="BuildOutputs\ApiDeprecatedBuildOutput.cs" />
@@ -75,29 +74,15 @@
     <Compile Include="ModelConverter\ApiNamesSpecResolver.cs" />
     <Compile Include="ModelConverter\ApiNamesTypeConverter.cs" />
     <Compile Include="ModelConverter\ModelConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeScriptReferenceConstants.cs" />
     <Compile Include="TypeScriptReferenceDocumentProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="5.2.0" ExcludeAssets="runtime" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.4.9" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.Composition" Version="1.0.31" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.0.1" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.DocAsCode.Build.Common" Version="2.56.3" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.DocAsCode.Common" Version="2.56.3" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.DocAsCode.DataContracts.Common" Version="2.56.3" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.DocAsCode.MarkdownLite" Version="2.56.3" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.56.3" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.DocAsCode.YamlSerialization" Version="2.56.3" ExcludeAssets="runtime" />
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" ExcludeAssets="runtime" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-
 </Project>
