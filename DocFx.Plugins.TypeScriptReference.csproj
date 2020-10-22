@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\$(MSBuildProjectName.ToLower().Replace('.', '-'))\plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\$(MSBuildProjectName.ToLower().Replace('.', '-'))\plugins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -77,6 +77,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeScriptReferenceConstants.cs" />
     <Compile Include="TypeScriptReferenceDocumentProcessor.cs" />
+    <ContentWithTargetPath Include="template\**">
+      <TargetPath>..\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </ContentWithTargetPath>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="5.2.0" ExcludeAssets="runtime" />
@@ -89,4 +93,10 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="Cleanup" AfterTargets="Clean">
+    <ItemGroup>
+      <FilesToDelete Include="$(OutputPath)\..\**" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)"/>
+  </Target>
 </Project>
