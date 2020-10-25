@@ -67,12 +67,12 @@ exports.getBookmarks = function (model, ignoreChildren)  {
 }
 
 function handleItem(vm, gitContribute, gitUrlPattern) {
-  // get contribution information
-  vm.docurl = common.getImproveTheDocHref(vm, gitContribute, gitUrlPattern);
   if (vm.source) {
       vm.source = normalizeLanguageValuePairs(vm.source);
       handleSource(vm.source);
   }
+  // get contribution information
+  vm.docurl = common.getImproveTheDocHref(vm, gitContribute, gitUrlPattern);
   vm.sourceurl = common.getViewSourceHref(vm, null, gitUrlPattern);
   // set to null incase mustache looks up
   vm.summary = vm.summary || null;
