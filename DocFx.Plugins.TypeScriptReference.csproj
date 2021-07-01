@@ -77,6 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeScriptReferenceConstants.cs" />
     <Compile Include="TypeScriptReferenceDocumentProcessor.cs" />
+    <Content Include="docfx.plugins.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <ContentWithTargetPath Include="template\**">
       <TargetPath>..\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
