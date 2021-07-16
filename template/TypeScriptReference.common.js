@@ -46,7 +46,7 @@ exports.transform = function (model) {
 }
 
 exports.getBookmarks = function (model, ignoreChildren)  {
-  if (!model || !model.type || model.type.toLowerCase() === "namespace") return null;
+  if (!model || !model.type || model.type.toLowerCase() === "namespace" || model.type.toLowerCase() === "module") return null;
 
   var bookmarks = {};
 
